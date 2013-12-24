@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Glossa</string>
+    <string name="send_name">Ad hoc glossa</string>
+    <string name="app_about">Glossa gives quick translations of words or phrases in other apps. In another app, highlight a word or phrase (usually by long-pressing), use the app\'s share feature, and select \"Ad hoc glossa\" from the share-to menu. Glossa will pop up a translation of that word or phrase. Choose the languages to translate from and to below.</string>
+    <string name="from_language">From Language:</string>
+    <string name="to_language">To Language:</string>
+</resources>
