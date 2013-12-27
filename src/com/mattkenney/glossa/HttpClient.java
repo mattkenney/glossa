@@ -107,7 +107,7 @@ public class HttpClient
             int code = connection.getResponseCode();
             if (code != HttpURLConnection.HTTP_OK)
             {
-                Log.d("Gloss", buffer.toString());
+                Log.d("Glossa", buffer.toString());
                 throw new IOException("Server response: " + code);
             }
 
@@ -131,7 +131,7 @@ public class HttpClient
                 }
                 catch (Exception e)
                 {
-                    Log.w("Gloss", "Exception closing OutputStream", e);
+                    Log.w("Glossa", "Exception closing OutputStream", e);
                 }
             }
             if (connIn != null)
@@ -142,7 +142,7 @@ public class HttpClient
                 }
                 catch (Exception e)
                 {
-                    Log.w("Gloss", "Exception closing InputStream", e);
+                    Log.w("Glossa", "Exception closing InputStream", e);
                 }
             }
             if (connection != null)

@@ -8,8 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".SetupActivity"
-    >
+    tools:context=".SetupActivity" >
 
     <TextView
         android:id="@+id/textView1"
@@ -23,28 +22,30 @@
         android:id="@+id/textView2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/from_language"
-        />
-    
+        android:text="@string/from_language" />
+
     <Spinner
         android:id="@+id/from"
-        android:prompt="@string/from_language"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        />
+        android:prompt="@string/from_language" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/to_language"
-        />
-    
+        android:text="@string/to_language" />
+
     <Spinner
         android:id="@+id/to"
-        android:prompt="@string/to_language"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        />
-    
+        android:prompt="@string/to_language" />
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.19"
+        layout="@layout/attribution" />
+
 </LinearLayout>

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.DataSetObserver;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -41,6 +42,7 @@ public class GlossaActivity
     private ArrayAdapter<String> adapter = null;
     private TextView header = null;
     private ProgressBar footer = null;
+    private View attribution = null;
 
     public GlossaActivity()
     {
@@ -59,8 +61,13 @@ public class GlossaActivity
         header = (TextView) getLayoutInflater().inflate(android.R.layout.simple_list_item_1, null);
         header.setTextColor(0xff0099cc);
         footer = new ProgressBar(this, null, android.R.attr.progressBarStyle);
+        
+        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        attribution = inflater.inflate(R.layout.attribution, null);
+        
         list.addHeaderView(header);
         list.addFooterView(footer);
+        list.addFooterView(attribution);
         setListAdapter(adapter);
         adapter.registerDataSetObserver(observer);
     }

@@ -45,7 +45,7 @@ class TranslateTask extends AsyncTask<String, Integer, Collection<String>>
         synchronized (getClass())
         {
             long now = System.currentTimeMillis();
-            Log.v("Gloss", "authorizationExpires: " + authorizationExpires + " (" + now + ")");
+            Log.v("Glossa", "authorizationExpires: " + authorizationExpires + " (" + now + ")");
             if (authorization == null || authorizationExpires < now)
             {
                 HttpClient client = new HttpClient();
@@ -60,11 +60,11 @@ class TranslateTask extends AsyncTask<String, Integer, Collection<String>>
                 authorization = "Bearer " + json.optString("access_token");
                 int expires = json.optInt("expires_in", AUTH_LIFE);
                 authorizationExpires = now + (expires - 60) * 1000L;
-                Log.v("Gloss", "new Authorization: " + authorization);
+                Log.v("Glossa", "new Authorization: " + authorization);
             }
             else
             {
-                Log.v("Gloss", "pre Authorization: " + authorization);
+                Log.v("Glossa", "pre Authorization: " + authorization);
             }
             return authorization;
         }
@@ -80,7 +80,7 @@ class TranslateTask extends AsyncTask<String, Integer, Collection<String>>
         client.addParameter("to", to);
         client.addParameter("maxTranslations", "5");
         String urlString = TRANSLATE_URL + "?" + client.getRequestData();
-        Log.v("Gloss", "GetTranslations URL: " + urlString);
+        Log.v("Glossa", "GetTranslations URL: " + urlString);
         client.clearData();
         HttpURLConnection connection = HttpClient.createConnection(urlString);
         connection.setRequestMethod("POST");
@@ -99,14 +99,15 @@ class TranslateTask extends AsyncTask<String, Integer, Collection<String>>
         }
         catch (IOException e)
         {
-            Log.e("Gloss", "Exception", e);
+            Log.e("Glossa", "Exception", e);
         }
         catch (JSONException e)
         {
-            Log.e("Gloss", "Exception", e);
-        } catch (XmlPullParserException e)
+            Log.e("Glossa", "Exception", e);
+        }
+        catch (XmlPullParserException e)
         {
-            Log.e("Gloss", "Exception", e);
+            Log.e("Glossa", "Exception", e);
         }
         return result;
     }
